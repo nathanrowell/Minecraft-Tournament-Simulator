@@ -626,11 +626,11 @@ def SG(teams):
                         last_place.random = players.random
                         last_place.team = players.team
                         last_place.color = players.color
+                maximum = 0
                 for players in playersBattling:
                     if players.team != last_place.team:
                         if players.random > maximum:
                             maximum = players.random
-                            first_place.name = players.name
                             first_place.name = players.name
                             first_place.random = players.random
                             first_place.team = players.team
@@ -713,8 +713,9 @@ def SG(teams):
                             last_place.random = players.random
                             last_place.team = players.team
                             last_place.color = players.color
+                    maximum = 0
                     for players in playersBattling:
-                        maximum = 0
+                        
                         if players.team != last_place.team:
                             if players.random > maximum:
                                 maximum = players.random
@@ -856,14 +857,6 @@ def SG(teams):
                 players.identifier = 1
             if players.name == fourth_last_place.name:
                 players.identifier = 1
-        
-        for players in playersBattling:
-            if players.identifier == 1:
-                print(getattr(Fore,players.color) + str(players.name) + Style.RESET_ALL + " has survived ⛊" )
-            if players.identifier == 0:
-                print(getattr(Fore,players.color) +str(players.name) + " has survived and got a kill ⚔︎")
-                players.coins = players.coins + 70
-                players.kills = players.kills + 1
             players.identifier = 0
         second_last_place.name = "null"
         third_last_place.name = "null"
@@ -4073,6 +4066,8 @@ def main():
             multiplier = 2.5
         if count == 8:
             multiplier = 3
+        for people in playing:
+            people.kills = 0
 
         
         if (games[game_choser] == "TGTTOS"):
