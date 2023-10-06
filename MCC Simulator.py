@@ -4057,6 +4057,8 @@ def main():
             player_21,	player_22,	player_23,	player_24,	player_25,	player_26,	player_27,	player_28,	player_29,	player_30,
             player_31,	player_32,	player_33,	player_34,	player_35,	player_36,	player_37,	player_38,	player_39,	player_40]
     while count < 9:
+        for player in playing:
+            player.kills = 0
         game_choser = random.randint(0,9-count)
         if count == 2:
             multiplier = 1.5
