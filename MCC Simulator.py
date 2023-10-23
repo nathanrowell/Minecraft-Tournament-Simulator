@@ -87,6 +87,19 @@ team_7 = [player_25,player_26,player_27,player_28]
 team_8 = [player_29,player_30,player_31,player_32]
 team_9 = [player_33,player_34,player_35,player_36]
 team_10 = [player_37,player_38,player_39,player_40]
+def speed():
+    while 2 != 3:
+        speed = input("Put Speed to FAST,REGULAR,SLOW,INSTANT\n")
+        if speed == "FAST":
+            return 0.5
+        if speed == "REGULAR":
+            return 1
+        if speed == "SLOW":
+            return 1.5
+        if speed == "INSTANT":
+            return 0
+    return speed
+timer = speed()
 teams = [team_1, team_2, team_3, team_4, team_5, team_6, team_7, team_8, team_9, team_10]
 playing = [player_1	, player_2,	player_3	,player_4,	player_5	,player_6,	player_7,	player_8,	player_9,	player_10,
             player_11,	player_12,	player_13,	player_14,	player_15,	player_16,	player_17,	player_18,	player_19,	player_20,
@@ -191,7 +204,7 @@ def RSR(players,round):
         index2 = index2 + 1
         count2 = count2 - 1
         #normally 0.5
-        time.sleep(0.5)
+        time.sleep(timer*0.5)
     
     sorted = []
     most_coins = 0
@@ -335,16 +348,16 @@ def team_total(total,teams,multiplier,end_round):
         coins: int
         name: str
         color: str
-    team_1 = finalTeam(0,"Team 1","RED")
-    team_2 = finalTeam(0,"Team 2","YELLOW")
-    team_3 = finalTeam(0,"Team 3","LIGHTYELLOW_EX")
-    team_4 = finalTeam(0,"Team 4","LIGHTGREEN_EX")
-    team_5 = finalTeam(0,"Team 5","BLUE")
-    team_6 = finalTeam(0,"Team 6","LIGHTCYAN_EX")
-    team_7 = finalTeam(0,"Team 7","CYAN")
-    team_8 = finalTeam(0,"Team 8","MAGENTA")
-    team_9 = finalTeam(0,"Team 9","LIGHTRED_EX")
-    team_10 = finalTeam(0,"Team 10","GREEN")
+    team_1 = finalTeam(0,"Red Rabbits","RED")
+    team_2 = finalTeam(0,"Orange Ocelots","YELLOW")
+    team_3 = finalTeam(0,"Yellow Yaks","LIGHTYELLOW_EX")
+    team_4 = finalTeam(0,"Lime Llamas","LIGHTGREEN_EX")
+    team_5 = finalTeam(0,"Green Geckos","BLUE")
+    team_6 = finalTeam(0,"Cyan Coyotes","LIGHTCYAN_EX")
+    team_7 = finalTeam(0,"Aqua Axolotls","CYAN")
+    team_8 = finalTeam(0,"Blue Bats","MAGENTA")
+    team_9 = finalTeam(0,"Purple Pandas","LIGHTRED_EX")
+    team_10 = finalTeam(0,"Pink Parrots","GREEN")
     for people in playing:
         people.total_coins += people.coins
         people.coins = 0
@@ -555,7 +568,7 @@ def SG(teams):
                 print(getattr(Fore, lister.color) + "Team " + str(lister.team) + " - " + str(lister.name))
         print(getattr(Back,color2) + "                     " + getattr(Back,color1) + "                       ")
         #normally 3
-        time.sleep(3)
+        time.sleep(timer*3)
         totalTeam = totalTeam - 1
         playersBattling = []
         for teamed in teamsCompeting:
@@ -1013,7 +1026,7 @@ def SG(teams):
                 print(getattr(Fore,actual.color) + "Team " + str(actual.team) + " - " + str(actual.name))
         print("")
         #normally 3
-        time.sleep(3)
+        time.sleep(timer*3)
     winningNumber = 0
     totalWinners = 0
     for peopleReamining in teams:
@@ -1380,7 +1393,7 @@ def HITW(players,round):
             Placement -= 1
         index3 = 0
         #normally 0.5
-        time.sleep(0.5)
+        time.sleep(timer*0.5)
         for player in players:
             if player.name == last_place.name:
                 end.append(players[index3])
@@ -1585,7 +1598,7 @@ def Disco(players,round):
             Fore.LIGHTGREEN_EX + "4" + Style.RESET_ALL + "       " + Fore.BLUE + "5" + Style.RESET_ALL + "       " + Fore.LIGHTCYAN_EX + "6" + Style.RESET_ALL + "       " + Fore.CYAN + "7" + Style.RESET_ALL + "       " +
             Fore.MAGENTA + "8" + Style.RESET_ALL + "       " + Fore.LIGHTRED_EX + "9" + Style.RESET_ALL + "      " + Fore.GREEN + "10" + Style.RESET_ALL + "       " )
             print(Style.BRIGHT + str(lefton1) + "       " + str(lefton2) + "       " +str(lefton3) + "       " +str(lefton4) + "       " +str(lefton5) + "       " +str(lefton6) + "       " +str(lefton7) + "       " +str(lefton8) + "       " +str(lefton9) + "       " +str(lefton10) + "\n")
-            time.sleep(5)
+            time.sleep(timer*5)
             for player in players:
                 player.coins += 12
         if round4 == 40:
@@ -1596,7 +1609,7 @@ def Disco(players,round):
             Fore.LIGHTGREEN_EX + "4" + Style.RESET_ALL + "       " + Fore.BLUE + "5" + Style.RESET_ALL + "       " + Fore.LIGHTCYAN_EX + "6" + Style.RESET_ALL + "       " + Fore.CYAN + "7" + Style.RESET_ALL + "       " +
             Fore.MAGENTA + "8" + Style.RESET_ALL + "       " + Fore.LIGHTRED_EX + "9" + Style.RESET_ALL + "      " + Fore.GREEN + "10" + Style.RESET_ALL + "       " )
             print(Style.BRIGHT + str(lefton1) + "       " + str(lefton2) + "       " +str(lefton3) + "       " +str(lefton4) + "       " +str(lefton5) + "       " +str(lefton6) + "       " +str(lefton7) + "       " +str(lefton8) + "       " +str(lefton9) + "       " +str(lefton10) + "\n")
-            time.sleep(5)
+            time.sleep(timer*5)
             for player in players:
                 player.coins += 12
         if round4 == 50:
@@ -1607,7 +1620,7 @@ def Disco(players,round):
             Fore.LIGHTGREEN_EX + "4" + Style.RESET_ALL + "       " + Fore.BLUE + "5" + Style.RESET_ALL + "       " + Fore.LIGHTCYAN_EX + "6" + Style.RESET_ALL + "       " + Fore.CYAN + "7" + Style.RESET_ALL + "       " +
             Fore.MAGENTA + "8" + Style.RESET_ALL + "       " + Fore.LIGHTRED_EX + "9" + Style.RESET_ALL + "      " + Fore.GREEN + "10" + Style.RESET_ALL + "       " )
             print(Style.BRIGHT + str(lefton1) + "       " + str(lefton2) + "       " +str(lefton3) + "       " +str(lefton4) + "       " +str(lefton5) + "       " +str(lefton6) + "       " +str(lefton7) + "       " +str(lefton8) + "       " +str(lefton9) + "       " +str(lefton10) + "\n")
-            time.sleep(5)
+            time.sleep(timer*5)
             for player in players:
                 player.coins += 12
         index3 = 0
@@ -1632,7 +1645,7 @@ def Disco(players,round):
         index = 0
         index2 = index2 + 1
         count2 = count2 - 1
-        time.sleep(1)
+        time.sleep(timer*1)
     sorted = []
     for player in end:
         print(player.name + " survived " + str(player.kills) + " total rounds" )
@@ -1766,7 +1779,7 @@ def GR(players, players2):
         
 
         #normally 20    
-        time.sleep(10)
+        time.sleep(timer*10)
     final = []
     index6 = 0
     index5 = 0
@@ -2142,27 +2155,27 @@ def SB(players,round):
             print(Style.BRIGHT + Back.BLACK + "                      ✧  Top 20 ✧                     ")
             print("")
             #normally 4
-            time.sleep(4)
+            time.sleep(timer*4)
         if (counter == 30):
             print(Style.BRIGHT + Back.BLACK + "                      ✧  Top 10 ✧                     ")
             print("")
             #normally 4
-            time.sleep(4)
+            time.sleep(timer*4)
         if (counter == 35):
             print(Style.BRIGHT + Back.BLACK + "                      ✧  Top 5 ✧                     ")
             print("")
             #normally 4
-            time.sleep(4)
+            time.sleep(timer*4)
         if (counter == 37):
             print(Style.BRIGHT + Back.BLACK + "                      ✧  Top 3 ✧                     ")
             print("")
             #normally 4
-            time.sleep(4)
+            time.sleep(timer*4)
         if (counter == 38):
             print(Style.BRIGHT + Back.BLACK + "                      ✧  Top 2 ✧                     ")
             print("")
             #normally 4
-            time.sleep(4)
+            time.sleep(timer*4)
         print("『 " + str(Placement) +" 』 " + getattr(Fore, player.color) +  player.name + Style.RESET_ALL + " [" + str(player.coins) + "🪙 ]  [" + str(player.kills) + "⚔︎ ]" + "\n")
         Placement -= 1
         counter = counter + 1
@@ -3188,7 +3201,7 @@ def Obstacle(players):
         for player in players:
             print(str(player.name) + ": On Team " + str(player.team) + " and scored: " + str(player.random)) 
         #normally 15    
-        time.sleep(15)
+        time.sleep(timer*15)
         #usually 20
         
 
@@ -3505,7 +3518,7 @@ def Duels(players,round):
                 print(getattr(Fore,player.color) + player.name + " (" + str(player.team) + ")")
             print("")
             #normally 3
-            time.sleep(3)
+            time.sleep(timer*3)
         if index2 == 10:
             print(Style.BRIGHT + Back.BLACK + "                      ✧  Final 10  ✧                     ")
             list2 = sorted(list2, key=operator.attrgetter('team'))
@@ -3513,7 +3526,7 @@ def Duels(players,round):
                 print(getattr(Fore,player.color) + player.name + " (" + str(player.team) + ")")
             print("")
             #normally 3
-            time.sleep(3)
+            time.sleep(timer*3)
         if index2 == 5:
             print(Style.BRIGHT + Back.BLACK + "                      ✧  Final 5  ✧                     ")
             list2 = sorted(list2, key=operator.attrgetter('team'))
@@ -3521,7 +3534,7 @@ def Duels(players,round):
                 print(getattr(Fore,player.color) + player.name + " (" + str(player.team) + ")")
             print("")
             #normally 3
-            time.sleep(3)
+            time.sleep(timer*3)
         for player in list2:
             list2size += 1
         randomed = random.randint(0,list2size-1)
@@ -3532,7 +3545,7 @@ def Duels(players,round):
         list2.pop(randomed)
         print(getattr(Fore,player0.color) + str(player0.name) + Style.RESET_ALL + Style.BRIGHT + Fore.BLACK + " vs " + Style.RESET_ALL + getattr(Fore,player1.color) + str(player1.name))
         #normally 2
-        time.sleep(2)
+        time.sleep(timer*1)
         if (player0.random > player1.random): 
             print(getattr(Fore,player0.color) + str(player0.name) + Style.RESET_ALL + Style.BRIGHT + Fore.BLACK +  " Wins" + Style.RESET_ALL + " [" + getattr(Fore,player1.color) + str(player1.name) + Style.RESET_ALL + " 『" + str(index2) + "』]"+ "\n")
             player0.kills += 1
@@ -3553,7 +3566,7 @@ def Duels(players,round):
             print(getattr(Fore,list2[0].color) + str(list2[0].name) + Style.RESET_ALL + " Wins!")
             end.append(list2[0])
         #normally 2
-        time.sleep(2)
+        time.sleep(timer*1)
         index2 -= 1
         index = 0
         added = True
@@ -3752,7 +3765,7 @@ def SOT(players):
         index = 10000    
         minimum = 10000
         #normally 20
-        time.sleep(10)
+        time.sleep(timer*10)
         
     looping = 0
     while looping < 40:
@@ -3886,7 +3899,7 @@ def DB(players):
                     team2.pop(eliminated)
                 if accuracy <= 10:
                     print(getattr(Fore, team1[picked].color) + str(team1[picked].name) + Style.RESET_ALL + " missed")
-                time.sleep(2)
+                time.sleep(timer*2)
 
                 team1arrows -= 1
                 team2arrows += 1
@@ -3901,7 +3914,7 @@ def DB(players):
                     team1.pop(eliminated)
                 if accuracy <= 10:
                     print(getattr(Fore, team2[picked].color) + str(team2[picked].name) + Style.RESET_ALL + " missed")
-                time.sleep(2)
+                time.sleep(timer*2)
                 team2arrows -= 1
                 team1arrows += 1
         while (len(team1) > 0 and len(team2) > 0):
@@ -3916,7 +3929,7 @@ def DB(players):
                         team2.pop(eliminated)
                     if accuracy <= 10:
                         print(getattr(Fore, team1[picked].color) + str(team1[picked].name) + Style.RESET_ALL + " missed")
-                    time.sleep(2)
+                    time.sleep(timer*2)
                     team1arrows -= 1
                     team2arrows += 1
             if team2arrows == 2 and len(team2) > 0:
@@ -3930,7 +3943,7 @@ def DB(players):
                         team1.pop(eliminated)
                     if accuracy <= 10:
                         print(getattr(Fore, team2[picked].color) + str(team2[picked].name) + Style.RESET_ALL + " missed")
-                    time.sleep(2)
+                    time.sleep(timer*2)
                     team2arrows -= 1
                     team1arrows += 1
             if len(team1) == 0:
@@ -4097,42 +4110,42 @@ def main():
                 if keyboardinput == " ":
                     team_total(playing,teams,multiplier,end_round)
                 keyboardinput = input()
-            time.sleep(2)
+            time.sleep(timer*2)
             playing,roundsummary2 = TGTTOS(playing,teamsTGTTOS2,2)
             keyboardinput = 'AAA'
             while keyboardinput != "":
                 if keyboardinput == " ":
                     team_total(playing,teams,multiplier,end_round)
                 keyboardinput = input()
-            time.sleep(2)
+            time.sleep(timer*2)
             playing,roundsummary3 = TGTTOS(playing,teamsTGTTOS3,3)
             keyboardinput = 'AAA'
             while keyboardinput != "":
                 if keyboardinput == " ":
                     team_total(playing,teams,multiplier,end_round)
                 keyboardinput = input()
-            time.sleep(2)
+            time.sleep(timer*2)
             playing,roundsummary4 = TGTTOS(playing,teamsTGTTOS4,4)
             keyboardinput = 'AAA'
             while keyboardinput != "":
                 if keyboardinput == " ":
                     team_total(playing,teams,multiplier,end_round)
                 keyboardinput = input()
-            time.sleep(2)
+            time.sleep(timer*2)
             playing,roundsummary5 = TGTTOS(playing,teamsTGTTOS5,5)
             keyboardinput = 'AAA'
             while keyboardinput != "":
                 if keyboardinput == " ":
                     team_total(playing,teams,multiplier,end_round)
                 keyboardinput = input()
-            time.sleep(2)
+            time.sleep(timer*2)
             playing,roundsummary6 = TGTTOS(playing,teamsTGTTOS6,6)
             keyboardinput = 'AAA'
             while keyboardinput != "":
                 if keyboardinput == " ":
                     team_total(playing,teams,multiplier,end_round)
                 keyboardinput = input()
-            time.sleep(2)
+            time.sleep(timer*2)
 
             print(roundsummary1)
             print(roundsummary2)
@@ -4161,14 +4174,14 @@ def main():
                 if keyboardinput == " ":
                     team_total(playing,teams,multiplier,end_round)
                 keyboardinput = input()
-            time.sleep(2)
+            time.sleep(timer*2)
             playing,roundsummary2 = SB(playing,2)
             keyboardinput = 'AAA'
             while keyboardinput != "":
                 if keyboardinput == " ":
                     team_total(playing,teams,multiplier,end_round)
                 keyboardinput = input()
-            time.sleep(2)
+            time.sleep(timer*2)
             playing,roundsummary3 = SB(playing,3)
             keyboardinput = 'AAA'
             while keyboardinput != "":
@@ -4209,14 +4222,14 @@ def main():
                 if keyboardinput == " ":
                     team_total(playing,teams,multiplier,end_round)
                 keyboardinput = input()
-            time.sleep(2)
+            time.sleep(timer*2)
             playing,roundsummary2 = HITW(playing,2)
             keyboardinput = 'AAA'
             while keyboardinput != "":
                 if keyboardinput == " ":
                     team_total(playing,teams,multiplier,end_round)
                 keyboardinput = input()
-            time.sleep(2)
+            time.sleep(timer*2)
             playing,roundsummary3 = HITW(playing,3)
             keyboardinput = 'AAA'
             while keyboardinput != "":
@@ -4252,35 +4265,35 @@ def main():
                 if keyboardinput == " ":
                     team_total(playing,teams,multiplier,end_round)
                 keyboardinput = input()
-            time.sleep(2)
+            time.sleep(timer*2)
             playing = Parkour1(playing,2)
             keyboardinput = 'AAA'
             while keyboardinput != "":
                 if keyboardinput == " ":
                     team_total(playing,teams,multiplier,end_round)
                 keyboardinput = input()
-            time.sleep(2)
+            time.sleep(timer*2)
             playing = Parkour1(playing,3)
             keyboardinput = 'AAA'
             while keyboardinput != "":
                 if keyboardinput == " ":
                     team_total(playing,teams,multiplier,end_round)
                 keyboardinput = input()
-            time.sleep(2)
+            time.sleep(timer*2)
             playing = Parkour1(playing,4)
             keyboardinput = 'AAA'
             while keyboardinput != "":
                 if keyboardinput == " ":
                     team_total(playing,teams,multiplier,end_round)
                 keyboardinput = input()
-            time.sleep(2)
+            time.sleep(timer*2)
             playing = Parkour1(playing,5)
             keyboardinput = 'AAA'
             while keyboardinput != "":
                 if keyboardinput == " ":
                     team_total(playing,teams,multiplier,end_round)
                 keyboardinput = input()
-            time.sleep(2)
+            time.sleep(timer*2)
             playing,roundsummary1 = Parkour2(playing,6)
             keyboardinput = 'AAA'
             while keyboardinput != "":
@@ -4321,7 +4334,7 @@ def main():
                 if keyboardinput == " ":
                     team_total(playing,teams,multiplier,end_round)
                 keyboardinput = input()
-            time.sleep(2)
+            time.sleep(timer*2)
             playing,roundsummary2 = Duels(playing,2)
             keyboardinput = 'AAA'
             while keyboardinput != "":
@@ -4344,14 +4357,14 @@ def main():
                 if keyboardinput == " ":
                     team_total(playing,teams,multiplier,end_round)
                 keyboardinput = input()
-            time.sleep(2)
+            time.sleep(timer*2)
             playing,roundsummary2 = Disco(playing,2)
             keyboardinput = 'AAA'
             while keyboardinput != "":
                 if keyboardinput == " ":
                     team_total(playing,teams,multiplier,end_round)
                 keyboardinput = input()
-            time.sleep(2)
+            time.sleep(timer*2)
             playing,roundsummary3 = Disco(playing,3)
             keyboardinput = 'AAA'
             while keyboardinput != "":
@@ -4380,14 +4393,14 @@ def main():
                 if keyboardinput == " ":
                     team_total(playing,teams,multiplier,end_round)
                 keyboardinput = input()
-            time.sleep(2)
+            time.sleep(timer*2)
             playing,roundsummary2 = RSR(playing,2)
             keyboardinput = 'AAA'
             while keyboardinput != "":
                 if keyboardinput == " ":
                     team_total(playing,teams,multiplier,end_round)
                 keyboardinput = input()
-            time.sleep(2)
+            time.sleep(timer*2)
             playing,roundsummary3 = RSR(playing,3)
             keyboardinput = 'AAA'
             while keyboardinput != "":
