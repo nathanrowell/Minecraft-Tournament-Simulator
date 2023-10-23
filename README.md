@@ -4,7 +4,6 @@ skill level, edit the second column with a number out of 100 that represents ski
 Things I Still Want To Fix/Add:
 Games: Meltdown, Ace Race, Battle Box, Parkour Tag, Bingo
 - Make Parkour Warrior more realistic in terms of scoring
-- Fix Game Speed (Add  Options)
 - Fix Sands of Time Top 5
 - Change "Team 1" To Actual Team Names
 - Fix Messages After Game Ends
