@@ -24,17 +24,18 @@ class Team:
     random: int
     coins: int
     total_coins: int
+    name: str
     color: str
-team_1x = Team(1,50,0,0,0,"RED")
-team_2x = Team(2,50,0,0,0,"YELLOW")
-team_3x = Team(3,50,0,0,0,"LIGHTYELLOW_EX")
-team_4x = Team(4,50,0,0,0,"LIGHTGREEN_EX")
-team_5x = Team(5,50,0,0,0,"BLUE")
-team_6x = Team(6,50,0,0,0,"LIGHTCYAN_EX")
-team_7x = Team(7,50,0,0,0,"CYAN")
-team_8x = Team(8,50,0,0,0,"MAGENTA")
-team_9x = Team(9,50,0,0,0,"LIGHTRED_EX")
-team_10x = Team(10,50,0,0,0,"GREEN")
+team_1x = Team(1,50,0,0,0,"Red Rabbits","RED")
+team_2x = Team(2,50,0,0,0,"Orange Ocelots","YELLOW")
+team_3x = Team(3,50,0,0,0,"Yellow Yaks","LIGHTYELLOW_EX")
+team_4x = Team(4,50,0,0,0,"Lime Llamas","LIGHTGREEN_EX")
+team_5x = Team(5,50,0,0,0,"Green Geckos","GREEN")
+team_6x = Team(6,50,0,0,0,"Cyan Coyotes","CYAN")
+team_7x = Team(7,50,0,0,0,"Aqua Axolotls","LIGHTCYAN_EX")
+team_8x = Team(8,50,0,0,0,"Blue Bats","BLUE")
+team_9x = Team(9,50,0,0,0,"Purple Pandas","MAGENTA")
+team_10x = Team(10,50,0,0,0,"Pink Parrots","LIGHTRED_EX")
 teams = [team_1x, team_2x,team_3x,team_4x,team_5x,team_6x,team_7x,team_8x,team_9x,team_10x]
 player_1= Player('player1',80,0,0,0,1,0,0,'RED')
 player_2= Player('player2',80,0,0,0,1,0,0,'RED')
@@ -352,12 +353,12 @@ def team_total(total,teams,multiplier,end_round):
     team_2 = finalTeam(0,"Orange Ocelots","YELLOW")
     team_3 = finalTeam(0,"Yellow Yaks","LIGHTYELLOW_EX")
     team_4 = finalTeam(0,"Lime Llamas","LIGHTGREEN_EX")
-    team_5 = finalTeam(0,"Green Geckos","BLUE")
-    team_6 = finalTeam(0,"Cyan Coyotes","LIGHTCYAN_EX")
-    team_7 = finalTeam(0,"Aqua Axolotls","CYAN")
-    team_8 = finalTeam(0,"Blue Bats","MAGENTA")
-    team_9 = finalTeam(0,"Purple Pandas","LIGHTRED_EX")
-    team_10 = finalTeam(0,"Pink Parrots","GREEN")
+    team_5 = finalTeam(0,"Green Geckos","GREEN")
+    team_6 = finalTeam(0,"Cyan Coyotes","CYAN")
+    team_7 = finalTeam(0,"Aqua Axolotls","LIGHTCYAN_EX")
+    team_8 = finalTeam(0,"Blue Bats","BLUE")
+    team_9 = finalTeam(0,"Purple Pandas","MAGENTA")
+    team_10 = finalTeam(0,"Pink Parrots","LIGHTRED_EX")
     for people in playing:
         people.total_coins += people.coins
         people.coins = 0
@@ -530,17 +531,17 @@ def SG(teams):
         if TeamBattling1 == 4:
             color1 = 'LIGHTGREEN_EX'
         if TeamBattling1 == 5:
-            color1 = 'BLUE'
+            color1 = "GREEN"
         if TeamBattling1 == 6:
-            color1 = 'LIGHTCYAN_EX'
+            color1 = "CYAN"
         if TeamBattling1 == 7:
-            color1 = 'CYAN'
+            color1 = "LIGHTCYAN_EX"
         if TeamBattling1 == 8:
-            color1 = 'MAGENTA'
+            color1 = "BLUE"
         if TeamBattling1 == 9:
-            color1 = 'LIGHTRED_EX'
+            color1 = "MAGENTA"
         if TeamBattling1 == 10:
-            color1 = 'GREEN'
+            color1 = "LIGHTRED_EX"
         if TeamBattling2 == 1:
             color2 = 'RED'
         if TeamBattling2 == 2:
@@ -550,17 +551,17 @@ def SG(teams):
         if TeamBattling2 == 4:
             color2 = 'LIGHTGREEN_EX'
         if TeamBattling2 == 5:
-            color2 = 'BLUE'
+            color2 = "GREEN"
         if TeamBattling2 == 6:
-            color2 = 'LIGHTCYAN_EX'
+            color2 = "CYAN"
         if TeamBattling2 == 7:
-            color2 = 'CYAN'
+            color2 = "LIGHTCYAN_EX"
         if TeamBattling2 == 8:
-            color2 = 'MAGENTA'
+            color2 = "BLUE"
         if TeamBattling2 == 9:
-            color2 = 'LIGHTRED_EX'
+            color2 = "MAGENTA"
         if TeamBattling2 == 10:
-            color2 = 'GREEN'
+            color2 = "LIGHTRED_EX"
         print(getattr(Fore,color1) + "Team "  + str(TeamBattling1) + Style.RESET_ALL + " vs." + getattr(Fore,color2) +  " Team " + str(TeamBattling2))
         print(getattr(Back,color1) + "                     " + getattr(Back,color2) + "                       ")
         for competing in teamsCompeting:
@@ -1897,12 +1898,12 @@ def GR_Team_Total(total,multiplier):
     team_2 = finalTeam(0,"Team 2","YELLOW")
     team_3 = finalTeam(0,"Team 3","LIGHTYELLOW_EX")
     team_4 = finalTeam(0,"Team 4","LIGHTGREEN_EX")
-    team_5 = finalTeam(0,"Team 5","BLUE")
-    team_6 = finalTeam(0,"Team 6","LIGHTCYAN_EX")
-    team_7 = finalTeam(0,"Team 7","CYAN")
-    team_8 = finalTeam(0,"Team 8","MAGENTA")
-    team_9 = finalTeam(0,"Team 9","LIGHTRED_EX")
-    team_10 = finalTeam(0,"Team 10","GREEN")
+    team_5 = finalTeam(0,"Team 5","GREEN")
+    team_6 = finalTeam(0,"Team 6","CYAN")
+    team_7 = finalTeam(0,"Team 7","LIGHTCYAN_EX")
+    team_8 = finalTeam(0,"Team 8","BLUE")
+    team_9 = finalTeam(0,"Team 9","MAGENTA")
+    team_10 = finalTeam(0,"Team 10","LIGHTRED_EX")
     for parts in total:
         if parts.number == 1:
             team_1.coins = team_1.coins + parts.coins
@@ -2522,17 +2523,17 @@ def TGTTOS(players,teams,round):
             if fourth == 4:
                 color = "LIGHTGREEN_EX"
             if fourth == 5:
-                color = "BLUE"
-            if fourth == 6:
-                color = "LIGHTCYAN_EX"
-            if fourth == 7:
-                color = "CYAN"
-            if fourth == 8:
-                color = "MAGENTA"
-            if fourth == 9:
-                color = "LIGHTRED_EX"
-            if fourth == 10:
                 color = "GREEN"
+            if fourth == 6:
+                color = "CYAN"
+            if fourth == 7:
+                color = "LIGHTCYAN_EX"
+            if fourth == 8:
+                color = "BLUE"
+            if fourth == 9:
+                color = "MAGENTA"
+            if fourth == 10:
+                color = "LIGHTRED_EX"
             print(" ︾ " + Style.BRIGHT + getattr(Back, color) + "Team " + str(fourth)  + " Was the fourth full team to finish." + Style.RESET_ALL + " ︽\n")
             for team in teams:
                 teamsin.append(team.number)
@@ -2630,17 +2631,17 @@ def TGTTOS(players,teams,round):
             if fourth == 4:
                 color = "LIGHTGREEN_EX"
             if fourth == 5:
-                color = "BLUE"
-            if fourth == 6:
-                color = "LIGHTCYAN_EX"
-            if fourth == 7:
-                color = "CYAN"
-            if fourth == 8:
-                color = "MAGENTA"
-            if fourth == 9:
-                color = "LIGHTRED_EX"
-            if fourth == 10:
                 color = "GREEN"
+            if fourth == 6:
+                color = "CYAN"
+            if fourth == 7:
+                color = "LIGHTCYAN_EX"
+            if fourth == 8:
+                color = "BLUE"
+            if fourth == 9:
+                color = "MAGENTA"
+            if fourth == 10:
+                color = "LIGHTRED_EX"
             print(" ︾ " + Style.BRIGHT + getattr(Back, color) + "Team " + str(fourth)  + " Was the third full team to finish. " + Style.RESET_ALL + " ︽\n")
             for team in teams:
                 teamsin.append(team.number)
@@ -2738,17 +2739,17 @@ def TGTTOS(players,teams,round):
             if fourth == 4:
                 color = "LIGHTGREEN_EX"
             if fourth == 5:
-                color = "BLUE"
-            if fourth == 6:
-                color = "LIGHTCYAN_EX"
-            if fourth == 7:
-                color = "CYAN"
-            if fourth == 8:
-                color = "MAGENTA"
-            if fourth == 9:
-                color = "LIGHTRED_EX"
-            if fourth == 10:
                 color = "GREEN"
+            if fourth == 6:
+                color = "CYAN"
+            if fourth == 7:
+                color = "LIGHTCYAN_EX"
+            if fourth == 8:
+                color = "BLUE"
+            if fourth == 9:
+                color = "MAGENTA"
+            if fourth == 10:
+                color = "LIGHTRED_EX"
             print(" ︾ " + Style.BRIGHT + getattr(Back, color) + "Team " + str(fourth)  + " Was the second full team to finish." + Style.RESET_ALL + " ︽\n")
             for team in teams:
                 teamsin.append(team.number)
@@ -2837,17 +2838,17 @@ def TGTTOS(players,teams,round):
             if fourth == 4:
                 color = "LIGHTGREEN_EX"
             if fourth == 5:
-                color = "BLUE"
-            if fourth == 6:
-                color = "LIGHTCYAN_EX"
-            if fourth == 7:
-                color = "CYAN"
-            if fourth == 8:
-                color = "MAGENTA"
-            if fourth == 9:
-                color = "LIGHTRED_EX"
-            if fourth == 10:
                 color = "GREEN"
+            if fourth == 6:
+                color = "CYAN"
+            if fourth == 7:
+                color = "LIGHTCYAN_EX"
+            if fourth == 8:
+                color = "BLUE"
+            if fourth == 9:
+                color = "MAGENTA"
+            if fourth == 10:
+                color = "LIGHTRED_EX"
             team.coins = team.coins + 25
             #end2.append(teams[0])
             #teams.pop(0)
@@ -3975,43 +3976,43 @@ def main():
     multiplier = 1
     games = ["TGTTOS", "Sky Battle", "Survival Games", "HITW", "Parkour Warrior", "Sands of Time", "Duels", "RSR", "Disco"]
     count = 1
-    team_1x = Team(1,50,0,0,0,"RED")
-    team_2x = Team(2,50,0,0,0,"YELLOW")
-    team_3x = Team(3,50,0,0,0,"LIGHTYELLOW_EX")
-    team_4x = Team(4,50,0,0,0,"LIGHTGREEN_EX")
-    team_5x = Team(5,50,0,0,0,"BLUE")
-    team_6x = Team(6,50,0,0,0,"LIGHTCYAN_EX")
-    team_7x = Team(7,50,0,0,0,"CYAN")
-    team_8x = Team(8,50,0,0,0,"MAGENTA")
-    team_9x = Team(9,50,0,0,0,"LIGHTRED_EX")
-    team_10x = Team(10,50,0,0,0,"GREEN")
+    team_1x = Team(1,50,0,0,0,"Red Rabbits","RED")
+    team_2x = Team(2,50,0,0,0,"Orange Ocelots","YELLOW")
+    team_3x = Team(3,50,0,0,0,"Yellow Yaks","LIGHTYELLOW_EX")
+    team_4x = Team(4,50,0,0,0,"Lime Llamas","LIGHTGREEN_EX")
+    team_5x = Team(5,50,0,0,0,"Green Geckos","GREEN")
+    team_6x = Team(6,50,0,0,0,"Cyan Coyotes","CYAN")
+    team_7x = Team(7,50,0,0,0,"Aqua Axolotls","LIGHTCYAN_EX")
+    team_8x = Team(8,50,0,0,0,"Blue Bats","BLUE")
+    team_9x = Team(9,50,0,0,0,"Purple Pandas","MAGENTA")
+    team_10x = Team(10,50,0,0,0,"Pink Parrots","LIGHTRED_EX")
     teams = [team_1x, team_2x,team_3x,team_4x,team_5x,team_6x,team_7x,team_8x,team_9x,team_10x]
-    team_1xt = Team(1,50,0,0,0,"RED")
-    team_2xt = Team(2,50,0,0,0,"YELLOW")
-    team_3xt = Team(3,50,0,0,0,"LIGHTYELLOW_EX")
-    team_4xt = Team(4,50,0,0,0,"LIGHTGREEN_EX")
-    team_5xt = Team(5,50,0,0,0,"BLUE")
-    team_6xt = Team(6,50,0,0,0,"LIGHTCYAN_EX")
-    team_7xt = Team(7,50,0,0,0,"CYAN")
-    team_8xt = Team(8,50,0,0,0,"MAGENTA")
-    team_9xt = Team(9,50,0,0,0,"LIGHTRED_EX")
-    team_10xt = Team(10,50,0,0,0,"GREEN")
+    team_1xt = Team(1,50,0,0,0,"Red Rabbits","RED")
+    team_2xt = Team(2,50,0,0,0,"Orange Ocelots","YELLOW")
+    team_3xt = Team(3,50,0,0,0,"Yellow Yaks","LIGHTYELLOW_EX")
+    team_4xt = Team(4,50,0,0,0,"Lime Llamas","LIGHTGREEN_EX")
+    team_5xt = Team(5,50,0,0,0,"Green Geckos","GREEN")
+    team_6xt = Team(6,50,0,0,0,"Cyan Coyotes","CYAN")
+    team_7xt = Team(7,50,0,0,0,"Aqua Axolotls","LIGHTCYAN_EX")
+    team_8xt = Team(8,50,0,0,0,"Blue Bats","BLUE")
+    team_9xt = Team(9,50,0,0,0,"Purple Pandas","MAGENTA")
+    team_10xt = Team(10,50,0,0,0,"Pink Parrots","LIGHTRED_EX")
     teamsTGTTOS = [team_1xt, team_2xt,team_3xt,team_4xt,team_5xt,team_6xt,team_7xt,team_8xt,team_9xt,team_10xt]
     teamsTGTTOS2 = [team_1xt, team_2xt,team_3xt,team_4xt,team_5xt,team_6xt,team_7xt,team_8xt,team_9xt,team_10xt]
     teamsTGTTOS3 = [team_1xt, team_2xt,team_3xt,team_4xt,team_5xt,team_6xt,team_7xt,team_8xt,team_9xt,team_10xt]
     teamsTGTTOS4 = [team_1xt, team_2xt,team_3xt,team_4xt,team_5xt,team_6xt,team_7xt,team_8xt,team_9xt,team_10xt]
     teamsTGTTOS5 = [team_1xt, team_2xt,team_3xt,team_4xt,team_5xt,team_6xt,team_7xt,team_8xt,team_9xt,team_10xt]
     teamsTGTTOS6 = [team_1xt, team_2xt,team_3xt,team_4xt,team_5xt,team_6xt,team_7xt,team_8xt,team_9xt,team_10xt]
-    team_1xtg = Team(1,50,0,0,0,"RED")
-    team_2xtg = Team(2,50,0,0,0,"YELLOW")
-    team_3xtg = Team(3,50,0,0,0,"LIGHTYELLOW_EX")
-    team_4xtg = Team(4,50,0,0,0,"LIGHTGREEN_EX")
-    team_5xtg = Team(5,50,0,0,0,"BLUE")
-    team_6xtg = Team(6,50,0,0,0,"LIGHTCYAN_EX")
-    team_7xtg = Team(7,50,0,0,0,"CYAN")
-    team_8xtg = Team(8,50,0,0,0,"MAGENTA")
-    team_9xtg = Team(9,50,0,0,0,"LIGHTRED_EX")
-    team_10xtg = Team(10,50,0,0,0,"GREEN")
+    team_1xtg = Team(1,50,0,0,0,"Red Rabbits","RED")
+    team_2xtg = Team(2,50,0,0,0,"Orange Ocelots","YELLOW")
+    team_3xtg = Team(3,50,0,0,0,"Yellow Yaks","LIGHTYELLOW_EX")
+    team_4xtg = Team(4,50,0,0,0,"Lime Llamas","LIGHTGREEN_EX")
+    team_5xtg = Team(5,50,0,0,0,"Green Geckos","GREEN")
+    team_6xtg = Team(6,50,0,0,0,"Cyan Coyotes","CYAN")
+    team_7xtg = Team(7,50,0,0,0,"Aqua Axolotls","LIGHTCYAN_EX")
+    team_8xtg = Team(8,50,0,0,0,"Blue Bats","BLUE")
+    team_9xtg = Team(9,50,0,0,0,"Purple Pandas","MAGENTA")
+    team_10xtg = Team(10,50,0,0,0,"Pink Parrots","LIGHTRED_EX")
     teamsGR = [team_1xtg, team_2xtg,team_3xtg,team_4xtg,team_5xtg,team_6xtg,team_7xtg,team_8xtg,team_9xtg,team_10xtg]
     player_1= Player('player1',80,0,0,0,1,0,0,'RED')
     player_2= Player('player2',80,0,0,0,1,0,0,'RED')
@@ -4441,7 +4442,7 @@ def main():
         sorted_x = sorted(playing, key=operator.attrgetter('total_coins'))
         sorted_x.reverse()
         for team in sorted_y:
-            print(getattr(Fore, team.color) + "Team " + str(team.number) + Style.RESET_ALL + " Coins: " + str(math.trunc(team.total_coins)))
+            print(getattr(Fore, team.color) +  str(team.name) + Style.RESET_ALL + " Coins: " + str(math.trunc(team.total_coins)))
         print("------------")
         placements = 1
         for people in sorted_x:
