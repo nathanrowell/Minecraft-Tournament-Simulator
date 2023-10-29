@@ -5,6 +5,5 @@ Things I Still Want To Fix/Add:
 Games: Meltdown, Ace Race, Battle Box, Parkour Tag, Bingo
 - Make Parkour Warrior more realistic in terms of scoring
 - Fix Sands of Time Top 5
-- Change "Team 1" To Actual Team Names
 - Fix Messages After Game Ends
 - Add Scoreboard Again After Winners Announced
