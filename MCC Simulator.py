@@ -3628,8 +3628,8 @@ def Duels(players,round):
                 player.coins += 35
         print(Style.BRIGHT + Back.BLACK + "                          ✧  Remaining on Teams ✧                         ")
         print(Fore.RED + "1" + Style.RESET_ALL + "       " + Fore.YELLOW + "2" + Style.RESET_ALL + "       " + Fore.LIGHTYELLOW_EX + "3" + Style.RESET_ALL + "       " + 
-            Fore.LIGHTGREEN_EX + "4" + Style.RESET_ALL + "       " + Fore.BLUE + "5" + Style.RESET_ALL + "       " + Fore.LIGHTCYAN_EX + "6" + Style.RESET_ALL + "       " + Fore.CYAN + "7" + Style.RESET_ALL + "       " +
-            Fore.MAGENTA + "8" + Style.RESET_ALL + "       " + Fore.LIGHTRED_EX + "9" + Style.RESET_ALL + "      " + Fore.GREEN + "10" + Style.RESET_ALL + "       " )
+            Fore.LIGHTGREEN_EX + "4" + Style.RESET_ALL + "       " + Fore.GREEN + "5" + Style.RESET_ALL + "       " + Fore.CYAN + "6" + Style.RESET_ALL + "       " + Fore.LIGHTCYAN_EX + "7" + Style.RESET_ALL + "       " +
+            Fore.BLUE + "8" + Style.RESET_ALL + "       " + Fore.MAGENTA + "9" + Style.RESET_ALL + "      " + Fore.LIGHTRED_EX + "10" + Style.RESET_ALL + "       " )
         print(Style.BRIGHT + str(lefton1) + "       " + str(lefton2) + "       " +str(lefton3) + "       " +str(lefton4) + "       " +str(lefton5) + "       " +str(lefton6) + "       " +str(lefton7) + "       " +str(lefton8) + "       " +str(lefton9) + "       " +str(lefton10) + "\n")
             
         #print("1   2   3   4   5   6   7   8   9   10")
@@ -3863,6 +3863,8 @@ def DB(players):
     team2number = 0
     color1 = ''
     color2 = ''
+    team1name = ''
+    team2name = ''
     for player in players:
         if team1number == 0:
             team1number = player.team
@@ -3870,8 +3872,49 @@ def DB(players):
         if player.team != team1number:
             team2number = player.team
             color2 = player.color
+    if color1 == "RED":
+        team1name = "Red Rabbits"
+    if color1 == "YELLOW":
+        team1name = "Orange Ocelots"
+    if color1 == "LIGHTYELLOW_EX":
+        team1name = "Yellow Yaks"
+    if color1 == "LIGHTGREEN_EX":
+        team1name = "Lime Llamas"
+    if color1 == "GREEN":
+        team1name = "Green Geckos"
+    if color1 == "CYAN":
+        team1name = "Cyan Coyotes"
+    if color1 == "LIGHTCYAN_EX":
+        team1name = "Aqua Axolotls"
+    if color1 == "BLUE":
+        team1name = "Blue Bats"
+    if color1 == "MAGENTA":
+        team1name = "Purple Pandas"
+    if color1 == "LIGHTRED_EX":
+        team1name = "Pink Parrots"   
+    if color2 == "RED":
+        team2name = "Red Rabbits"
+    if color2 == "YELLOW":
+        team2name = "Orange Ocelots"
+    if color2 == "LIGHTYELLOW_EX":
+        team2name = "Yellow Yaks"
+    if color2 == "LIGHTGREEN_EX":
+        team2name = "Lime Llamas"
+    if color2 == "GREEN":
+        team2name = "Green Geckos"
+    if color2 == "CYAN":
+        team2name = "Cyan Coyotes"
+    if color2 == "LIGHTCYAN_EX":
+        team2name = "Aqua Axolotls"
+    if color2 == "BLUE":
+        team2name = "Blue Bats"
+    if color2 == "MAGENTA":
+        team2name = "Purple Pandas"
+    if color2 == "LIGHTRED_EX":
+        team2name = "Pink Parrots" 
     team1 = []
     team2 = []
+    
     team1shot = []
     team2shot = []
     team1arrows = 0
@@ -3959,11 +4002,11 @@ def DB(players):
         team2.extend(x for x in team2shot if x not in team2)
         if team1wins == 3:
             print(getattr(Back,color1) + "                     " + getattr(Back,color2) + "                       ")
-            print(getattr(Fore,color1) + "           Team " + str(team1number)+ " Are The Champions!")
+            print(getattr(Fore,color1) + "       " + str(team1name)+ " Are The Champions!")
             print(getattr(Back,color1) + "                     " + getattr(Back,color2) + "                       ")
         if team2wins == 3:
             print(getattr(Back,color2) + "                     " + getattr(Back,color1) + "                       ")
-            print(getattr(Fore,color2) + "           Team " + str(team2number)+ " Are The Champions!")
+            print(getattr(Fore,color2) + "       " + str(team2name)+ " Are The Champions!")
             print(getattr(Back,color2) + "                     " + getattr(Back,color1) + "                       ")
         keyboardinput = 'AAA'
         while keyboardinput != "":
