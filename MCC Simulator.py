@@ -24,18 +24,20 @@ class Team:
     random: int
     coins: int
     total_coins: int
+    reverse: int
+    unweighted: int
     name: str
     color: str
-team_1x = Team(1,50,0,0,0,"Red Rabbits","RED")
-team_2x = Team(2,50,0,0,0,"Orange Ocelots","YELLOW")
-team_3x = Team(3,50,0,0,0,"Yellow Yaks","LIGHTYELLOW_EX")
-team_4x = Team(4,50,0,0,0,"Lime Llamas","LIGHTGREEN_EX")
-team_5x = Team(5,50,0,0,0,"Green Geckos","GREEN")
-team_6x = Team(6,50,0,0,0,"Cyan Coyotes","CYAN")
-team_7x = Team(7,50,0,0,0,"Aqua Axolotls","LIGHTCYAN_EX")
-team_8x = Team(8,50,0,0,0,"Blue Bats","BLUE")
-team_9x = Team(9,50,0,0,0,"Purple Pandas","MAGENTA")
-team_10x = Team(10,50,0,0,0,"Pink Parrots","LIGHTRED_EX")
+team_1x = Team(1,50,0,0,0,0,0,"Red Rabbits","RED")
+team_2x = Team(2,50,0,0,0,0,0,"Orange Ocelots","YELLOW")
+team_3x = Team(3,50,0,0,0,0,0,"Yellow Yaks","LIGHTYELLOW_EX")
+team_4x = Team(4,50,0,0,0,0,0,"Lime Llamas","LIGHTGREEN_EX")
+team_5x = Team(5,50,0,0,0,0,0,"Green Geckos","GREEN")
+team_6x = Team(6,50,0,0,0,0,0,"Cyan Coyotes","CYAN")
+team_7x = Team(7,50,0,0,0,0,0,"Aqua Axolotls","LIGHTCYAN_EX")
+team_8x = Team(8,50,0,0,0,0,0,"Blue Bats","BLUE")
+team_9x = Team(9,50,0,0,0,0,0,"Purple Pandas","MAGENTA")
+team_10x = Team(10,50,0,0,0,0,0,"Pink Parrots","LIGHTRED_EX")
 teams = [team_1x, team_2x,team_3x,team_4x,team_5x,team_6x,team_7x,team_8x,team_9x,team_10x]
 player_1= Player('player1',80,0,0,0,1,0,0,'RED')
 player_2= Player('player2',80,0,0,0,1,0,0,'RED')
@@ -347,18 +349,20 @@ def team_total(total,teams,multiplier,end_round):
     @dataclass 
     class finalTeam:
         coins: int
+        reverse: int
+        unweighted: int
         name: str
         color: str
-    team_1 = finalTeam(0,"Red Rabbits","RED")
-    team_2 = finalTeam(0,"Orange Ocelots","YELLOW")
-    team_3 = finalTeam(0,"Yellow Yaks","LIGHTYELLOW_EX")
-    team_4 = finalTeam(0,"Lime Llamas","LIGHTGREEN_EX")
-    team_5 = finalTeam(0,"Green Geckos","GREEN")
-    team_6 = finalTeam(0,"Cyan Coyotes","CYAN")
-    team_7 = finalTeam(0,"Aqua Axolotls","LIGHTCYAN_EX")
-    team_8 = finalTeam(0,"Blue Bats","BLUE")
-    team_9 = finalTeam(0,"Purple Pandas","MAGENTA")
-    team_10 = finalTeam(0,"Pink Parrots","LIGHTRED_EX")
+    team_1 = finalTeam(0,0,0,"Red Rabbits","RED")
+    team_2 = finalTeam(0,0,0,"Orange Ocelots","YELLOW")
+    team_3 = finalTeam(0,0,0,"Yellow Yaks","LIGHTYELLOW_EX")
+    team_4 = finalTeam(0,0,0,"Lime Llamas","LIGHTGREEN_EX")
+    team_5 = finalTeam(0,0,0,"Green Geckos","GREEN")
+    team_6 = finalTeam(0,0,0,"Cyan Coyotes","CYAN")
+    team_7 = finalTeam(0,0,0,"Aqua Axolotls","LIGHTCYAN_EX")
+    team_8 = finalTeam(0,0,0,"Blue Bats","BLUE")
+    team_9 = finalTeam(0,0,0,"Purple Pandas","MAGENTA")
+    team_10 = finalTeam(0,0,0,"Pink Parrots","LIGHTRED_EX")
     for people in playing:
         people.total_coins += people.coins
         people.coins = 0
@@ -383,6 +387,71 @@ def team_total(total,teams,multiplier,end_round):
             team_9.coins = team_9.coins + parts.coins
         if parts.team == 10:
             team_10.coins = team_10.coins + parts.coins
+    team_1.unweighted = team_1.coins
+    team_2.unweighted = team_2.coins
+    team_3.unweighted = team_3.coins
+    team_4.unweighted = team_4.coins
+    team_5.unweighted = team_5.coins
+    team_6.unweighted = team_6.coins
+    team_7.unweighted = team_7.coins
+    team_8.unweighted = team_8.coins
+    team_9.unweighted = team_9.coins
+    team_10.unweighted = team_10.coins
+    if multiplier == 1:
+        team_1.reverse = team_1.coins * 3
+        team_2.reverse = team_2.coins * 3
+        team_3.reverse = team_3.coins * 3
+        team_4.reverse = team_4.coins * 3
+        team_5.reverse = team_5.coins * 3
+        team_6.reverse = team_6.coins * 3
+        team_7.reverse = team_7.coins * 3
+        team_8.reverse = team_8.coins * 3
+        team_9.reverse = team_9.coins * 3
+        team_10.reverse = team_10.coins * 3
+    if multiplier == 1.5:
+        team_1.reverse = team_1.coins * 2.5
+        team_2.reverse = team_2.coins * 2.5
+        team_3.reverse = team_3.coins * 2.5
+        team_4.reverse = team_4.coins * 2.5
+        team_5.reverse = team_5.coins * 2.5
+        team_6.reverse = team_6.coins * 2.5
+        team_7.reverse = team_7.coins * 2.5
+        team_8.reverse = team_8.coins * 2.5
+        team_9.reverse = team_9.coins * 2.5
+        team_10.reverse = team_10.coins * 2.5
+    if multiplier == 2:
+        team_1.reverse = team_1.coins * 2
+        team_2.reverse = team_2.coins * 2
+        team_3.reverse = team_3.coins * 2
+        team_4.reverse = team_4.coins * 2
+        team_5.reverse = team_5.coins * 2
+        team_6.reverse = team_6.coins *2
+        team_7.reverse = team_7.coins * 2
+        team_8.reverse = team_8.coins * 2
+        team_9.reverse = team_9.coins * 2
+        team_10.reverse = team_10.coins * 2
+    if multiplier == 2.5:
+        team_1.reverse = team_1.coins * 1.5
+        team_2.reverse = team_2.coins * 1.5
+        team_3.reverse = team_3.coins * 1.5
+        team_4.reverse = team_4.coins * 1.5
+        team_5.reverse = team_5.coins * 1.5
+        team_6.reverse = team_6.coins * 1.5
+        team_7.reverse = team_7.coins * 1.5
+        team_8.reverse = team_8.coins * 1.5
+        team_9.reverse = team_9.coins * 1.5
+        team_10.reverse = team_10.coins * 1.5
+    if multiplier == 3:
+        team_1.reverse = team_1.coins * 1
+        team_2.reverse = team_2.coins * 1
+        team_3.reverse = team_3.coins * 1
+        team_4.reverse = team_4.coins * 1
+        team_5.reverse = team_5.coins *1
+        team_6.reverse = team_6.coins * 1
+        team_7.reverse = team_7.coins * 1
+        team_8.reverse = team_8.coins * 1
+        team_9.reverse = team_9.coins * 1
+        team_10.reverse = team_10.coins * 1
     team_1.coins = team_1.coins * multiplier
     team_2.coins = team_2.coins * multiplier
     team_3.coins = team_3.coins * multiplier
@@ -397,24 +466,44 @@ def team_total(total,teams,multiplier,end_round):
         for team in teams:
             if team.number == 1:
                 team.total_coins += team_1.coins
+                team.reverse += team_1.reverse
+                team.unweighted += team_1.unweighted
             if team.number == 2:
                 team.total_coins += team_2.coins
+                team.reverse += team_2.reverse
+                team.unweighted += team_2.unweighted
             if team.number == 3:
                 team.total_coins += team_3.coins
+                team.reverse += team_3.reverse
+                team.unweighted += team_3.unweighted
             if team.number == 4:
                 team.total_coins += team_4.coins
+                team.reverse += team_4.reverse
+                team.unweighted += team_4.unweighted
             if team.number == 5:
                 team.total_coins += team_5.coins
+                team.reverse += team_5.reverse
+                team.unweighted += team_5.unweighted
             if team.number == 6:
                 team.total_coins += team_6.coins
+                team.reverse += team_6.reverse
+                team.unweighted += team_6.unweighted
             if team.number == 7:
                 team.total_coins += team_7.coins
+                team.reverse += team_7.reverse
+                team.unweighted += team_7.unweighted
             if team.number == 8:
                 team.total_coins += team_8.coins
+                team.reverse += team_8.reverse
+                team.unweighted += team_8.unweighted
             if team.number == 9:
                 team.total_coins += team_9.coins
+                team.reverse += team_9.reverse
+                team.unweighted += team_9.unweighted
             if team.number == 10:
                 team.total_coins += team_10.coins
+                team.reverse += team_10.reverse
+                team.unweighted += team_10.unweighted
     sort_list = [team_1,team_10,team_2,team_3,team_4,team_5,team_6,team_7,team_8,team_9]
     sorted_list = sorted(sort_list, key=operator.attrgetter('coins'))
     sorted_list.reverse()
@@ -1711,7 +1800,7 @@ def Disco(players,round):
 
 def GR(players, players2):
     room_number = 1
-    player_0 = Team(0,0,0,0,0,"RED")
+    player_0 = Team(0,0,0,0,0,0,0,"RED")
     count = 0
     index = 0
     new_list = []
@@ -3994,8 +4083,8 @@ def DB(players):
                 team2wins += 1
             if len(team2) == 0:
                 team1wins += 1
-        print(Style.BRIGHT + "Team " + str(team1number) + " round wins: " + str(team1wins))
-        print(Style.BRIGHT + "Team "+ str(team2number) +  " round wins: " + str(team2wins))
+        print(Style.BRIGHT + str(team1name) + " round wins: " + str(team1wins))
+        print(Style.BRIGHT + str(team2name) +  " round wins: " + str(team2wins))
         team1arrows = 0
         team2arrows = 0
         team1.extend(x for x in team1shot if x not in team1)
@@ -4019,43 +4108,43 @@ def main():
     multiplier = 1
     games = ["TGTTOS", "Sky Battle", "Survival Games", "HITW", "Parkour Warrior", "Sands of Time", "Duels", "RSR", "Disco"]
     count = 1
-    team_1x = Team(1,50,0,0,0,"Red Rabbits","RED")
-    team_2x = Team(2,50,0,0,0,"Orange Ocelots","YELLOW")
-    team_3x = Team(3,50,0,0,0,"Yellow Yaks","LIGHTYELLOW_EX")
-    team_4x = Team(4,50,0,0,0,"Lime Llamas","LIGHTGREEN_EX")
-    team_5x = Team(5,50,0,0,0,"Green Geckos","GREEN")
-    team_6x = Team(6,50,0,0,0,"Cyan Coyotes","CYAN")
-    team_7x = Team(7,50,0,0,0,"Aqua Axolotls","LIGHTCYAN_EX")
-    team_8x = Team(8,50,0,0,0,"Blue Bats","BLUE")
-    team_9x = Team(9,50,0,0,0,"Purple Pandas","MAGENTA")
-    team_10x = Team(10,50,0,0,0,"Pink Parrots","LIGHTRED_EX")
+    team_1x = Team(1,50,0,0,0,0,0,"Red Rabbits","RED")
+    team_2x = Team(2,50,0,0,0,0,0,"Orange Ocelots","YELLOW")
+    team_3x = Team(3,50,0,0,0,0,0,"Yellow Yaks","LIGHTYELLOW_EX")
+    team_4x = Team(4,50,0,0,0,0,0,"Lime Llamas","LIGHTGREEN_EX")
+    team_5x = Team(5,50,0,0,0,0,0,"Green Geckos","GREEN")
+    team_6x = Team(6,50,0,0,0,0,0,"Cyan Coyotes","CYAN")
+    team_7x = Team(7,50,0,0,0,0,0,"Aqua Axolotls","LIGHTCYAN_EX")
+    team_8x = Team(8,50,0,0,0,0,0,"Blue Bats","BLUE")
+    team_9x = Team(9,50,0,0,0,0,0,"Purple Pandas","MAGENTA")
+    team_10x = Team(10,50,0,0,0,0,0,"Pink Parrots","LIGHTRED_EX")
     teams = [team_1x, team_2x,team_3x,team_4x,team_5x,team_6x,team_7x,team_8x,team_9x,team_10x]
-    team_1xt = Team(1,50,0,0,0,"Red Rabbits","RED")
-    team_2xt = Team(2,50,0,0,0,"Orange Ocelots","YELLOW")
-    team_3xt = Team(3,50,0,0,0,"Yellow Yaks","LIGHTYELLOW_EX")
-    team_4xt = Team(4,50,0,0,0,"Lime Llamas","LIGHTGREEN_EX")
-    team_5xt = Team(5,50,0,0,0,"Green Geckos","GREEN")
-    team_6xt = Team(6,50,0,0,0,"Cyan Coyotes","CYAN")
-    team_7xt = Team(7,50,0,0,0,"Aqua Axolotls","LIGHTCYAN_EX")
-    team_8xt = Team(8,50,0,0,0,"Blue Bats","BLUE")
-    team_9xt = Team(9,50,0,0,0,"Purple Pandas","MAGENTA")
-    team_10xt = Team(10,50,0,0,0,"Pink Parrots","LIGHTRED_EX")
+    team_1xt = Team(1,50,0,0,0,0,0,"Red Rabbits","RED")
+    team_2xt = Team(2,50,0,0,0,0,0,"Orange Ocelots","YELLOW")
+    team_3xt = Team(3,50,0,0,0,0,0,"Yellow Yaks","LIGHTYELLOW_EX")
+    team_4xt = Team(4,50,0,0,0,0,0,"Lime Llamas","LIGHTGREEN_EX")
+    team_5xt = Team(5,50,0,0,0,0,0,"Green Geckos","GREEN")
+    team_6xt = Team(6,50,0,0,0,0,0,"Cyan Coyotes","CYAN")
+    team_7xt = Team(7,50,0,0,0,0,0,"Aqua Axolotls","LIGHTCYAN_EX")
+    team_8xt = Team(8,50,0,0,0,0,0,"Blue Bats","BLUE")
+    team_9xt = Team(9,50,0,0,0,0,0,"Purple Pandas","MAGENTA")
+    team_10xt = Team(10,50,0,0,0,0,0,"Pink Parrots","LIGHTRED_EX")
     teamsTGTTOS = [team_1xt, team_2xt,team_3xt,team_4xt,team_5xt,team_6xt,team_7xt,team_8xt,team_9xt,team_10xt]
     teamsTGTTOS2 = [team_1xt, team_2xt,team_3xt,team_4xt,team_5xt,team_6xt,team_7xt,team_8xt,team_9xt,team_10xt]
     teamsTGTTOS3 = [team_1xt, team_2xt,team_3xt,team_4xt,team_5xt,team_6xt,team_7xt,team_8xt,team_9xt,team_10xt]
     teamsTGTTOS4 = [team_1xt, team_2xt,team_3xt,team_4xt,team_5xt,team_6xt,team_7xt,team_8xt,team_9xt,team_10xt]
     teamsTGTTOS5 = [team_1xt, team_2xt,team_3xt,team_4xt,team_5xt,team_6xt,team_7xt,team_8xt,team_9xt,team_10xt]
     teamsTGTTOS6 = [team_1xt, team_2xt,team_3xt,team_4xt,team_5xt,team_6xt,team_7xt,team_8xt,team_9xt,team_10xt]
-    team_1xtg = Team(1,50,0,0,0,"Red Rabbits","RED")
-    team_2xtg = Team(2,50,0,0,0,"Orange Ocelots","YELLOW")
-    team_3xtg = Team(3,50,0,0,0,"Yellow Yaks","LIGHTYELLOW_EX")
-    team_4xtg = Team(4,50,0,0,0,"Lime Llamas","LIGHTGREEN_EX")
-    team_5xtg = Team(5,50,0,0,0,"Green Geckos","GREEN")
-    team_6xtg = Team(6,50,0,0,0,"Cyan Coyotes","CYAN")
-    team_7xtg = Team(7,50,0,0,0,"Aqua Axolotls","LIGHTCYAN_EX")
-    team_8xtg = Team(8,50,0,0,0,"Blue Bats","BLUE")
-    team_9xtg = Team(9,50,0,0,0,"Purple Pandas","MAGENTA")
-    team_10xtg = Team(10,50,0,0,0,"Pink Parrots","LIGHTRED_EX")
+    team_1xtg = Team(1,50,0,0,0,0,0,"Red Rabbits","RED")
+    team_2xtg = Team(2,50,0,0,0,0,0,"Orange Ocelots","YELLOW")
+    team_3xtg = Team(3,50,0,0,0,0,0,"Yellow Yaks","LIGHTYELLOW_EX")
+    team_4xtg = Team(4,50,0,0,0,0,0,"Lime Llamas","LIGHTGREEN_EX")
+    team_5xtg = Team(5,50,0,0,0,0,0,"Green Geckos","GREEN")
+    team_6xtg = Team(6,50,0,0,0,0,0,"Cyan Coyotes","CYAN")
+    team_7xtg = Team(7,50,0,0,0,0,0,"Aqua Axolotls","LIGHTCYAN_EX")
+    team_8xtg = Team(8,50,0,0,0,0,0,"Blue Bats","BLUE")
+    team_9xtg = Team(9,50,0,0,0,0,0,"Purple Pandas","MAGENTA")
+    team_10xtg = Team(10,50,0,0,0,0,0,"Pink Parrots","LIGHTRED_EX")
     teamsGR = [team_1xtg, team_2xtg,team_3xtg,team_4xtg,team_5xtg,team_6xtg,team_7xtg,team_8xtg,team_9xtg,team_10xtg]
     player_1= Player('player1',80,0,0,0,1,0,0,'RED')
     player_2= Player('player2',80,0,0,0,1,0,0,'RED')
@@ -4512,6 +4601,26 @@ def main():
         if players.team == team1dodgebolt or players.team == team2dodgebolt:
             dodgeboltteams.append(players)
     DB(dodgeboltteams)
+    placements = 1
+    for people in sorted_x:
+        print(Style.BRIGHT + str(placements) + ": " + Style.RESET_ALL + getattr(Fore, people.color) + str(people.name) + Style.RESET_ALL + " Coins: "  + str(math.trunc(people.total_coins)))
+        placements += 1
+    print("Normal")
+    for team in sorted_y:
+        print(getattr(Fore, team.color) +  str(team.name) + Style.RESET_ALL + " Coins: " + str(math.trunc(team.total_coins)))
+    print("------------")
+    sorted_y = sorted(teams, key=operator.attrgetter('reverse'))
+    sorted_y.reverse()
+    sorted_x = sorted(teams, key=operator.attrgetter('unweighted'))
+    sorted_x.reverse()
+    print("Reverse")
+    for team in sorted_y:
+        print(getattr(Fore, team.color) +  str(team.name) + Style.RESET_ALL + " Coins: " + str(math.trunc(team.reverse)))
+    print("------------")
+    print("Unweighted")
+    for team in sorted_x:
+        print(getattr(Fore, team.color) +  str(team.name) + Style.RESET_ALL + " Coins: " + str(math.trunc(team.unweighted)))
+    print("------------")
 
 main()
 
